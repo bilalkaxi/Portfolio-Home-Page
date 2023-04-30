@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins") ;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*Scroll bar*/
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 100px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+   
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: dodgerblue;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(47, 136, 226);
+    border-radius: 50px;
+   
+}
+
+/* Body*/
+body {
+    background-color: #1f242d ;
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+    color: white;
+    
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 18px;
+    background: #1f242d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.logo {
+    font-size: 40px;
+    text-decoration: none;
+    font: bolder;
+    cursor: pointer;
+    text-shadow: 0 0 5px dodgerblue;
+    animation: slideRight 1s ease forwards;
+    color: dodgerblue;
+}
+
+.navbar > a {
+    font-weight: bolder;
+    text-shadow: 0 0 5px white;
+    display: inline-block ;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font: bold;
+    cursor: pointer ;
+   margin-right: 35px;
+   transition: 0.1s ease-in;
+   opacity: 0;
+   animation: slidetop 1s ease forwards;
+   animation-delay: calc(0.1s * var(--i));
+}
+
+.navbar > a:hover,
+.navbar  a.active {
+    border-bottom: 2px double dodgerblue;
+    text-shadow: 0 0 5px dodgerblue;
+    color: dodgerblue;
+    transition: 0.1s ease-in;
+    
+}
+.home-img > img {
+    border-radius: 60px;
+    min-width: 500px;
+    margin-right: -100px;
+    margin-bottom: -50px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatimage 3s ease-in-out infinite;
+    animation-delay: 2s, 2s;
+}
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content > h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slidetop 0.8s ease forwards;
+    
+}
+
+.home-content > h3 > span {
+    color: dodgerblue;
+    text-shadow: 0 0 5px dodgerblue;
+}
+
+.home-content > h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slidebottom 0.8s ease forwards;
+    
+    
+}
+
+.home-content h3:nth-of-type(2){
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: slidetop .8s ease forwards;
+}
+
+.home-content p {
+font-size: 16px;
+opacity: 0;
+animation: slideleft .8s ease forwards;
+}
+
+.social-media  > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid dodgerblue;
+    box-shadow: 0 3px 20px black ;
+    border-radius: 50% ;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 30px 15px;
+    opacity: 0;
+    animation: slideleft 0.9s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+
+.social-media  > a:hover {
+  background-color: dodgerblue;
+  color: white;
+  transition: 0.2s ease;
+  box-shadow: 0 3px 20px dodgerblue;
+  border: 2px solid dodgerblue;
+}
+
+
+
+.btn {
+    padding: 12px 28px;
+    margin-top: 20px;
+    display: inline;
+    background: transparent ;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 80px;
+    border: 2px solid dodgerblue;
+    color: black;
+    box-shadow: 0 3px 20px ;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: 2s ;
+}
+.btn:hover {
+    background-color: dodgerblue;
+    color: black;
+    box-shadow: 0 3px 20px dodgerblue;
+    border: 2px solid dodgerblue;
+    transition: 0.2s ease-in-out;
+}
+/* Footer*/
+footer > p{
+    text-align: center;
+}
+#foot {
+    color: dodgerblue;
+}
+
+/* Keyframaes animation*/
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slidetop {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slidebottom {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideleft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatimage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-24px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*About*/
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 5.5rem;
+    margin-right: 2.2rem;
+}
+.about-img > img {
+    width: 37vw;
+    height: 50vw;
+}
+.heading {
+    font-size: 2.5rem;
+    text-align: center;
+}
+.about-content {
+    text-align: center;
+    line-height: 1.2;
+}
+.about-content > h3{
+    font-size: 2.6rem;
+}
+.about-content P{
+    font-size: 16px;
+    margin: 1rem 0 2rem;
+    text-shadow: none;
+}
+
+.services p {
+    margin-bottom: 1.5rem;
+    
+}
+.services h2  {
+ margin-bottom:  2.5rem;
+}
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.services-box {
+    min-height: 400px;
+}
+ .services-box {
+    margin: 0 2rem 0;
+    flex: 1 1 10rem;
+    background:   #1f242d;
+    padding: 1rem .5rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid royalblue;
+}
+.services-box > i {
+    color: royalblue;
+}
+
+.services-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+    text-shadow: 0 0 5px white ;
+}
